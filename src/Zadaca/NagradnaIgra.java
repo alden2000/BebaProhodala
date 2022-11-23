@@ -8,6 +8,7 @@ public class NagradnaIgra {
         int[] mojiBrojevi = new int[8];
         double nagrada = 10000.0, osvojenaNagrada = 10000.0;
         int brojUlaganja = 0;
+
         TESTIRANJE:
         for (; ; ) {
             brojUlaganja++;
