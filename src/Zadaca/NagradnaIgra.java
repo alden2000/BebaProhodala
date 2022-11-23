@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class NagradnaIgra {
     public static void main(String[] args) {
         int[] dobitniBrojevi = {13, 88, 49, 56, 27, 66, 33, 91};
-        //int[] mojiBrojevi = new int[1];
         int broj;
         double nagrada = 10000.0, osvojenaNagrada = 10000.0;
         int brojUlaganja = 0;
@@ -15,9 +14,7 @@ public class NagradnaIgra {
         for (; ; ) {
             brojUlaganja++;
             int[] mojiBrojevi = new int[1];
-            //int brojPokusaja = 0;
             System.out.println("Unesite " + (brojUlaganja) + ". pokusaj:");
-//            broj = new Scanner(System.in).nextInt();
             for (int i = 0; i < 8; i++) {
                 broj = new Scanner(System.in).nextInt();
                 mojiBrojevi[i] = broj;

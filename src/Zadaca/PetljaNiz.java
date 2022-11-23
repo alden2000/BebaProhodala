@@ -17,12 +17,10 @@ public class PetljaNiz {
             }else {
                 nizPogresnih[n]=broj;
                 nizPogresnih = Arrays.copyOfRange(nizPogresnih, 0,nizPogresnih.length+1);
-//                nizPogresnih[n]=broj;
                 n++;
-                //nizPogresnih = Arrays.copyOfRange(nizPogresnih, 0,nizPogresnih.length);
-                String poruka = "Unio si ";
+                StringBuilder poruka = new StringBuilder("Unio si ");
                 for (int i=0; i<nizPogresnih.length-1; i++) {
-                    poruka= poruka + nizPogresnih[i] + " ";
+                    poruka.append(nizPogresnih[i]).append(" ");
                 }
                 System.out.println(poruka+ "brojeve");
             }
