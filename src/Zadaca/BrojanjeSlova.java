@@ -6,21 +6,22 @@ public class BrojanjeSlova {
     public static void main(String[] args) {
         String recenica = "Petar pan je pojeo crvenu papriku";
         char[] razlozenaRecenica = recenica.toCharArray();
-        char[] trazenaRijec = new char[3];
+        String trazenaRijec = new Scanner(System.in).nextLine();
+        char[] razlozenaTrazenaRijec = trazenaRijec.toCharArray();
         boolean postoji = false;
         System.out.println("Unesi rijec: ");
-        for (int i = 0; i < trazenaRijec.length; i++) {
-            trazenaRijec[i] = new Scanner(System.in).nextLine().charAt(0);
-        }
+//        for (int i = 0; i < razlozenaTrazenaRijec.length; i++) {
+//            razlozenaTrazenaRijec[i] = new Scanner(System.in).nextLine().charAt(0);
+//        }
         LABELA: for (int i = 0; i < razlozenaRecenica.length; i++) {
             if(postoji){
                 break ;
             }
-            if (razlozenaRecenica[i] != trazenaRijec[0]) {
+            if (razlozenaRecenica[i] != razlozenaTrazenaRijec[0]) {
                 continue;
             }
-            for (int j = 1; j < trazenaRijec.length; j++) {
-                if(razlozenaRecenica[i+j]==trazenaRijec[j]){
+            for (int j = 1; j < razlozenaTrazenaRijec.length; j++) {
+                if(razlozenaRecenica[i+j]==razlozenaTrazenaRijec[j]){
                     //System.out.println("Vasa rijec pocinje od " + (i + 1) + ". znaka.");
                     postoji = true;
                 }else {
