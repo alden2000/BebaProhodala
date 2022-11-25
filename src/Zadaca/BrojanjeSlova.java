@@ -4,38 +4,33 @@ import java.util.Scanner;
 
 public class BrojanjeSlova {
     public static void main(String[] args) {
-        String recenica = "Petar pan je pojeo crvenu papriku";
+        System.out.println("Unesi rijec");
+        String recenica = "karabaja mora dalje, karabaja naci mora, karabaja ne moze na nebo otic bez motora.";
         char[] razlozenaRecenica = recenica.toCharArray();
+        int brojRijeci = 0;
         String trazenaRijec = new Scanner(System.in).nextLine();
         char[] razlozenaTrazenaRijec = trazenaRijec.toCharArray();
-        boolean postoji = false;
-        System.out.println("Unesi rijec: ");
-//        for (int i = 0; i < razlozenaTrazenaRijec.length; i++) {
-//            razlozenaTrazenaRijec[i] = new Scanner(System.in).nextLine().charAt(0);
-//        }
-        LABELA: for (int i = 0; i < razlozenaRecenica.length; i++) {
-            if(postoji){
-                break ;
-            }
+        for (int i = 0; i < razlozenaRecenica.length; i++) {
+            int pomocniBrojac = 0;
             if (razlozenaRecenica[i] != razlozenaTrazenaRijec[0]) {
                 continue;
             }
-            for (int j = 1; j < razlozenaTrazenaRijec.length; j++) {
-                if(razlozenaRecenica[i+j]==razlozenaTrazenaRijec[j]){
-                    //System.out.println("Vasa rijec pocinje od " + (i + 1) + ". znaka.");
-                    postoji = true;
-                }else {
-                    postoji = false;
-                    continue LABELA;
+            for (int j = 0; j < razlozenaTrazenaRijec.length; j++) {
+                if (razlozenaRecenica[i + j] == razlozenaTrazenaRijec[j]) {
+                    pomocniBrojac++;
                 }
-//                System.out.println("Vasa rijec pocinje od " + (i + 1) + ". znaka.");
-//                postoji = true;
+                if (i+j==razlozenaRecenica.length-1) {
+                    break ;
+                }
+            }
+            if (pomocniBrojac == trazenaRijec.length()) {
+                brojRijeci++;
             }
         }
-        if (!postoji) {
+        if (brojRijeci == 0) {
             System.out.println("Ta rijec nije u recenici");
-        }else{
-            System.out.println("Ta rijec se nalazi u recenici");
+        } else {
+            System.out.println("Ta rijec se nalazi u recenici broj ponavljanja rijeci je " + brojRijeci);
         }
     }
 }
