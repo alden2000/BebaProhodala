@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BrojanjeSlova {
     public static void main(String[] args) {
-        System.out.println("Unesi rijec");
+        System.out.println("Unesi rijec:");
         String recenica = "karabaja mora dalje, karabaja naci mora, karabaja ne moze na nebo otic bez motora.";
         char[] razlozenaRecenica = recenica.toCharArray();
         int brojRijeci = 0;
